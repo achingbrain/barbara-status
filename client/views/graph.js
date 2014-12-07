@@ -125,22 +125,5 @@ module.exports = View.extend({
       this._chart.destroy()
       this._chart = null
     }
-  },
-
-  bindings: {
-    'model.temperatures': {
-      type: function(el, temperatures) {
-        if(!temperatures || !temperatures.length) {
-          return
-        }
-
-        if(!this._chart) {
-          return
-        }
-
-        this._chart.series[0].setData(temperatures)
-      },
-      selector: '[data-hook=temperatures]'
-    }
   }
 })
